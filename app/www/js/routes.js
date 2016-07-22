@@ -10,7 +10,7 @@ angular.module('app.routes', ['ionicUIRouter'])
     
   
 
-      .state('tabsController.home', {
+  .state('tabsController.home', {
     url: '/home',
     views: {
       'tab1': {
@@ -61,6 +61,12 @@ angular.module('app.routes', ['ionicUIRouter'])
     url: '/home',
     templateUrl: 'templates/tabsController.html',
     abstract:true
+  })
+
+  .state('room', {
+    url: '/room',
+    templateUrl: 'templates/room.html',
+    controller: 'pokeGoChatCtrl'
   })
 
 $urlRouterProvider.otherwise('/home/home')

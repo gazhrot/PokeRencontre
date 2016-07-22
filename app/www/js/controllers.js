@@ -4,7 +4,7 @@ angular.module('app.controllers', [])
 
 })
    
-.controller('pokeGoChatCtrl', function($scope, $http) {
+.controller('pokeGoChatCtrl', function($scope, $http, $location) {
 
 	$scope.connection = function(login, password) {
 
@@ -15,8 +15,9 @@ angular.module('app.controllers', [])
 
 		$http.post('http://localhost:3000/user/connection', data)
 		.success(function(data) {
-			$scope.connection_error = data.error;
+			$location.path('/room');
 		}, function(err) {
+			$scope.connection_error = data.error;
 			console.log(err.error);
 		})
 	}
