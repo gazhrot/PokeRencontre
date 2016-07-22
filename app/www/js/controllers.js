@@ -4,7 +4,7 @@ angular.module('app.controllers', [])
 
 })
    
-.controller('pokeGoChatCtrl', function($scope, $http, $location) {
+.controller('pokeGoChatCtrl', function($scope, $http, $location, $ionicPopup) {
 
 	$scope.connection = function(login, password) {
 
@@ -23,7 +23,7 @@ angular.module('app.controllers', [])
 	}
 })
    
-.controller('inscriptionCtrl', function($scope, $http) {
+.controller('inscriptionCtrl', function($scope, $http, $ionicPopup) {
 	
 	$scope.inscription = function(login, password) {
 
@@ -34,9 +34,26 @@ angular.module('app.controllers', [])
 
 		$http.post('http://localhost:3000/user/inscription', data)
 		.success(function(data) {
-			$scope.inscription_error = data.error;
+
+			if ( data.error === true) {
+				console.log(data);
+
+				var pop = $ionicPopup.alert({
+		           title: 'Inscription',
+		           template: "Inscription Valide"
+		         });
+			}else{
+				var pop = $ionicPopup.alert({
+		           title: 'Inscription',
+		           template: data.data
+		         });
+			}
+				;
 		}, function(err) {
-			console.log(err.error);
+			var pop = $ionicPopup.alert({
+	           title: 'Inscription',
+	           template: err.error
+	         });
 		})
 	}
 })
