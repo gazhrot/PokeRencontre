@@ -63,6 +63,12 @@ angular.module('app.routes', ['ionicUIRouter'])
     abstract:true
   })
 
+  .state('profil', {
+    url: '/profil',
+    templateUrl: 'templates/profil.html',
+    controller: 'profilCtrl'
+  })
+
   .state('room', {
     url: '/room',
     templateUrl: 'templates/room.html',

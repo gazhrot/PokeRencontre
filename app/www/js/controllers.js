@@ -3,6 +3,10 @@ angular.module('app.controllers', [])
 .controller('homeCtrl', function($scope) {
 
 })
+
+.controller('profilCtrl', function($scope, $http, $location, $ionicPopup) {
+
+})
    
 .controller('pokeGoChatCtrl', function($scope, $http, $location, $ionicPopup) {
 
