@@ -9,14 +9,15 @@
             <ion-item class="item-divider " id="inscription-list-item-divider2"></ion-item>
             <label class="item item-input " id="inscription-input4">
                 <span class="input-label">Email</span>
-                <input type="text" placeholder="">
+                <input type="email" ng-model="login" placeholder="">
             </label>
             <label class="item item-input " id="inscription-input5">
                 <span class="input-label">Password</span>
-                <input type="password" placeholder="">
+                <input type="password" ng-model="password" placeholder="">
             </label>
             <ion-item class="item-divider " id="inscription-list-item-divider1"></ion-item>
         </ion-list>
-        <button id="inscription-button4" class=" button button-positive  button-block icon ion-android-add-circle ">S'inscire</button>
+        <button id="inscription-button4" class=" button button-positive  button-block icon ion-android-add-circle " ng-click="inscription(login, password)">S'inscire</button>
+        {{ inscription_error }}
     </ion-content>
 </ion-view>

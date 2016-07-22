@@ -7,13 +7,14 @@
         <form id="pokeGoChat-form3" class="list ">
             <label class="item item-input " id="pokeGoChat-input6">
                 <span class="input-label">Email</span>
-                <input type="email" placeholder="">
+                <input type="email" ng-model="login" placeholder="">
             </label>
             <label class="item item-input " id="pokeGoChat-input7">
                 <span class="input-label">Password</span>
-                <input type="password" placeholder="">
+                <input type="password" ng-model="password" placeholder="">
             </label>
-            <button id="pokeGoChat-button5" class=" button button-positive  button-block ">Connexion</button>
+            <button id="pokeGoChat-button5" class=" button button-positive  button-block " ng-click="connection(login, password)">Connexion</button>
+            {{ connection_error }}
         </form>
     </ion-content>
 </ion-view>
